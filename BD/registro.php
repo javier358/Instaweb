@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="login-register-form">
+                <div class="login-register-form" method="post">
                     <div class="form-holder">
                         <div class="form-row form-head">
                             <div class="col-xs-6">

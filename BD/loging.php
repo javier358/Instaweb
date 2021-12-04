@@ -14,51 +14,42 @@
 <div class="container-fluid">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-sm-12">
                 <div class="login-register-form">
                     <div class="form-holder">
                         <div class="form-row form-head">
                             <div class="col-xs-6">
                                 <a class="site-brand" href="index.html"><img src="images/logo5.png" alt="InstaWeb"></a>
                             </div>
-                            <div class="col-xs-6">
-                                <div class="form-title"><img src="images/lock.svg" alt="">Area de Clientes</div>
+                            <div class="col-xs-6"> 
+                                <div class="form-title"><img src="images/lock.svg" alt="">Área de cliente</div>
                             </div>
                         </div>
                         <div class="form-row form-links">
                             <div class="col-xs-12">
-                                <a href="login.html" class="link-to">Ingresar</a> o <a href="register.html" class="link-to active">Registrarse</a>
+                                <a href="login.html" class="link-to active">Ingresar</a> o <a href="register.html" class="link-to">Registrarse</a>
                             </div>
                         </div>
                         <form>
                             <div class="form-row">
-                                <div class="col-xs-12">
+                                <div class="col-xs-12" method="post">
                                     <label>Usuario</label>
                                     <input type="text" class="form-control" required>
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row" method="post"> 
                                 <div class="col-xs-12">
-                                    <label>Password</label>
+                                    <label>Contraseña</label>
                                     <input type="password" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="col-xs-12">
-                                    <label>Repetir password</label>
-                                    <input type="password" class="form-control" required>
+                                <div class="col-xs-6">
+                                    <a href="#" class="forget-link">¿Olvidaste tu contraseña?</a>
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-xs-12">
-                                    <label>Correo</label>
-                                    <input type="email" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-xs-12">
+                                <div class="col-xs-6">
                                     <div class="submit-holder">
-                                        <button type="submit">Registrarse</button>
+                                        <button type="submit">Ingresar</button>
                                     </div>
                                 </div>
                             </div>
