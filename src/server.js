@@ -20,9 +20,7 @@ app.use(express.urlencoded({extended: false}));
 //variables globales
 
 //rutas
-app.get('/', (req, res) => {
-    res.render('index')
-});
+app.use(require('./routes/index.routes'));
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
