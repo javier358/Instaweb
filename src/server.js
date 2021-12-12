@@ -39,6 +39,8 @@ app.use((req, res, next) => {
 //rutas
 app.use(require('./routes/index.routes'));
 app.use(require('./routes/notes.route'));
+app.use(require('./routes/users.routes'));
+
 
 
 //archivos estaticos
