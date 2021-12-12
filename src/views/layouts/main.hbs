@@ -12,13 +12,17 @@
     </head>
 <body>
     {{>header}}
+    <main class="container p-5">
+    {{>messages}}
     {{{body}}}
+    </main>
+    
     {{>footer}}
 
 <script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>

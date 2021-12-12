@@ -1,8 +1,24 @@
-.divisor{
-   margin-left:40%;
-    display: flex;
+.divisor {
+   margin-left:30%;
+   width: 100%;
+    /*display: flex;*/
 }
 
 .title{
     color:#fff;
 }
+
+.all-ticket{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.all-ticket .card{
+    border:1px solid #d3d3dd;
+    background:#fff;
+    padding: 30px;
+    margin: 30px;
+    float: left;
+    display: grid;
+    width: 100%;
+       }
+
