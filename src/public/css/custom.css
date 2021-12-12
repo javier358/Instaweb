@@ -1,5 +1,8 @@
-/*---------------------------------------
- *                                      *
- *       Add Your Custom CSS Here       *
- *                                      *
- ---------------------------------------*/
+.divisor{
+   margin-left:40%;
+    display: flex;
+}
+
+.title{
+    color:#fff;
+}

@@ -1,6 +1,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
+const morgan = require('morgan');
 //inicialiciaciones
 const app = express();
 
@@ -15,12 +16,16 @@ app.engine('.hbs', exphbs.engine({
 }))
 app.set('view engine', '.hbs')
 //Middlewares
+app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
+
 
 //variables globales
 
 //rutas
 app.use(require('./routes/index.routes'));
+app.use(require('./routes/notes.route'));
+
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));

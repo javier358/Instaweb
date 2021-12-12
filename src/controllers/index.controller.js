@@ -1,3 +1,5 @@
+const notesCtrl = require("./notes.controller");
+
 const indexCtrl = {};
 
 indexCtrl.renderIndex = (req, res) => {
@@ -7,5 +9,7 @@ indexCtrl.renderIndex = (req, res) => {
 indexCtrl.renderNosotros = (req, res) => {
     res.render('Nosotros')
 };
+
+
 
 module.exports = indexCtrl;
