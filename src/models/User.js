@@ -9,13 +9,13 @@ const UserSchema = new Schema({
         timestamps: true
     });
 
-UserSchema.method.encrypPassword = async password =>{
+UserSchema.method.encrypPassword = async (password) =>{
     const salt = await bcryptjs.genSalt(10);
     return await bcryptjs.hash(password, salt);
 };
 
-UserSchema.method.matchPassword = function (password)  {
-    return await bcryptjs.compare(password, this.password )
+UserSchema.method.matchPassword = async (password) => {
+    return await bcrypt.compare(password, this.password );
 }
 
 module.exports = model('User', UserSchema);
