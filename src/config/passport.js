@@ -4,12 +4,12 @@ const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/User');
 
 passport.use(new LocalStrategy({
-    usernameField: 'user',
+    usernameField: 'users',
     passwordField: 'password'
-}, async (user, password, done ) => {
+}, async (users, password, done ) => {
 
     //confirmar si existe el correo del usuario 
-const user = await User.findOne({email})
+const user = await User.findOne({users})
 if (!user){
     return done(null, false, {message: 'El correo no está registrado'});
     } else {
@@ -23,11 +23,11 @@ if (!user){
     }
 }));
 
-passport.serializeUser((user, done); => {
+passport.serializeUser((user, done) => {
     done(null, user.id);
 });
 
-passport.deserializeUser((user, done); => {
+passport.deserializeUser((id, done) => {
     User.findById(id, (err, user) => {
         done(err, user);
     })

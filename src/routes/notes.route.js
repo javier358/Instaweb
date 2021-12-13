@@ -12,21 +12,23 @@ const {
     deleteNotes
 } = require('../controllers/notes.controller');
 
-// esto sirve para agregar las notas
-router.get('/notes/add', renderNoteForm);
+const {isAuthenticated} = require('../helpers/auth')
 
-router.post('/notes/new-note', createNewNote);
+// esto sirve para agregar las notas
+router.get('/notes/add',isAuthenticated, renderNoteForm);
+
+router.post('/notes/new-note',isAuthenticated, createNewNote);
 
 //devuele una lista de todas las notas creadas
-router.get('/notes', renderNotes);
+router.get('/notes',isAuthenticated, renderNotes);
 
 // editar notas
-router.get('/notes/edit/:id', renderEditForm);
+router.get('/notes/edit/:id',isAuthenticated, renderEditForm);
 
 //put es para actualizar algo que ya existe, get obtener, post para crear delete borrar
-router.put('/notes/edit/:id', updateNotes);
+router.put('/notes/edit/:id',isAuthenticated, updateNotes);
 
 //borrar notas
-router.delete('/notes/delete/:id', deleteNotes);
+router.delete('/notes/delete/:id',isAuthenticated, deleteNotes);
 
 module.exports = router

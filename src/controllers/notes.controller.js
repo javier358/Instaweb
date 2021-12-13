@@ -11,13 +11,14 @@ notesCtrl.createNewNote = async (req, res) => {
     const {title, description} = req.body
     const newNote = new Note({title , description});
     //console.log(newNote)
+    newNote.user = req.user.id;
     await newNote.save();
     req.flash('success_msg', 'Ticket creado satisfactoriamente')
     res.redirect('/notes')
 };
 
 notesCtrl.renderNotes = async (req, res) => {
-    const notes = await Note.find().lean();
+    const notes = await Note.find({user: req.user.id}).lean();
     res.render('notes/all-notes', { notes });
 };
 
