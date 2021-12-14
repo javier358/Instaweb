@@ -3,6 +3,7 @@ const notesCtrl = {};
 const Note = require('../models/Notes');
 
 notesCtrl.renderNoteForm = (req, res) => {
+    //
     res.render('notes/new-note');
 };
 
@@ -10,7 +11,7 @@ notesCtrl.renderNoteForm = (req, res) => {
 notesCtrl.createNewNote = async (req, res) => {
     const {title, description} = req.body
     const newNote = new Note({title , description});
-    //console.log(newNote)
+    console.log(req.user);
     newNote.user = req.user.id;
     await newNote.save();
     req.flash('success_msg', 'Ticket creado satisfactoriamente')
@@ -23,7 +24,7 @@ notesCtrl.renderNotes = async (req, res) => {
 };
 
 notesCtrl.renderEditForm = async (req, res) => {
-   const notes = await Note.findById(req.params.id).lean();
+   const notes = await Note.findById(req.params._id).lean();
    console.log(notes)
     res.render('notes/edit-note', { notes });
 };
